@@ -1,0 +1,17 @@
+services:
+  ros2:
+    build: . 
+    container_name: robot
+    restart: unless-stopped
+    network_mode: "host"
+    privileged: true
+    stdin_open: true
+    tty: true
+    devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+    volumes:
+      - ./ros2_ws:/root/workspace
+      - /var/run/usbmuxd:/var/run/usbmuxd
+    working_dir: /root/workspace
+    environment:
+      - ROS_DOMAIN_ID=0
