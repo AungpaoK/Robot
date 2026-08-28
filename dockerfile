@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y \
 # Set default working directory
 WORKDIR /root/workspace
 
+# Change shell type
+SHELL ["/bin/bash", "-c"]
+
 # Build and source workspace
 RUN . /opt/ros/jazzy/setup.bash && colcon build --packages-select sensorstream_driver
 
