@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /root/workspace
 
 # Build and source workspace
-RUN . /opt/ros/jazzy/setup.bash && colcon build --packeages-select sensorstream_driver
+RUN . /opt/ros/jazzy/setup.bash && colcon build --packages-select sensorstream_driver
 
 # Source ROS 2 setup scripts in bash configuration
 RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc && \
