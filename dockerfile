@@ -13,12 +13,12 @@ RUN apt-get update && apt-get install -y \
     ros-jazzy-cv-bridge \
     && rm -rf /var/lib/apt/lists/*
 
-# Set default working directory
-WORKDIR /root/workspace
-
 # Change shell type
 SHELL ["/bin/bash", "-c"]
 
 # Source ROS 2 setup scripts in bash configuration
 RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc && \
     echo 'if [ -f /root/workspace/install/setup.bash ]; then source /root/workspace/install/setup.bash; fi' >> /root/.bashrc
+
+# Set default working directory
+WORKDIR /root/workspace
