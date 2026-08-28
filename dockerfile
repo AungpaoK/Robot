@@ -18,7 +18,7 @@ SHELL ["/bin/bash", "-c"]
 
 # Source ROS 2 setup scripts in bash configuration
 RUN echo "source /opt/ros/jazzy/setup.bash" >> /root/.bashrc && \
-    echo 'if [ -f /root/workspace/install/setup.bash ]; then source /root/workspace/install/setup.bash; fi' >> /root/.bashrc
+    echo 'if [ -f /root/workspace/sensorstream_driver/install/setup.bash ]; then source /root/workspace/sensorstream_driver/install/setup.bash; fi' >> /root/.bashrc
 
 # Set default working directory
 WORKDIR /root/workspace
